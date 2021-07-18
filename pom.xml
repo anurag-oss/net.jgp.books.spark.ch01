@@ -16,6 +16,7 @@
     <spark.version>3.1.2</spark.version>
     <junit.version>4.13.1</junit.version>
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+    <maven-dependency-plugin-version>3.2.0</maven-dependency-plugin-version>
   </properties>
 
   <dependencies>
@@ -85,6 +86,21 @@
             <argument>net.jgp.books.spark.ch01.lab100_csv_to_dataframe.CsvToDataframeApp</argument>
           </arguments>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>${maven-dependency-plugin-version}</version>
+        <executions>
+          <execution>
+            <id>download-sources</id>
+            <goals>
+              <goal>sources</goal>
+            </goals>
+            <configuration>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
